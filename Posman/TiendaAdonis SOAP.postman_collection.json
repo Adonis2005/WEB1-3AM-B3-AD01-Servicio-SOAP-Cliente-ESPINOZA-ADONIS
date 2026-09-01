@@ -1,0 +1,390 @@
+{
+  "info": {
+    "_postman_id": "1cd0f050-fb93-4c1a-91d0-13bce5381174",
+    "name": "TiendaAdonis SOAP",
+    "description": "Colección Postman para probar los servicios SOAP ProductoService y CategoriaService del proyecto TiendaAdonis.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47427772"
+  },
+  "item": [
+    {
+      "name": "Obtener Productos",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/IProductoService/ObtenerProductos\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <s:Body>\n    <ObtenerProductos xmlns=\"http://tempuri.org/\" />\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ProductoService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ProductoService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Producto por ID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/IProductoService/ObtenerProducto\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <s:Body>\n    <ObtenerProducto xmlns=\"http://tempuri.org/\">\n      <id>1</id>\n    </ObtenerProducto>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ProductoService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ProductoService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar Producto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/IProductoService/AgregarProducto\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"\n            xmlns:a=\"http://schemas.datacontract.org/2004/07/TiendaAdonis.Models\">\n  <s:Body>\n    <AgregarProducto xmlns=\"http://tempuri.org/\">\n      <producto>\n        <a:Descripcion>Cafetera eléctrica agregada desde Postman</a:Descripcion>\n        <a:Estado>true</a:Estado>\n        <a:IdCategoria>1</a:IdCategoria>\n        <a:IdProducto>0</a:IdProducto>\n        <a:Nombre>Cafetera</a:Nombre>\n        <a:Precio>45.50</a:Precio>\n        <a:Stock>10</a:Stock>\n      </producto>\n    </AgregarProducto>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ProductoService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ProductoService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Producto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/IProductoService/ActualizarProducto\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"\n            xmlns:a=\"http://schemas.datacontract.org/2004/07/TiendaAdonis.Models\">\n  <s:Body>\n    <ActualizarProducto xmlns=\"http://tempuri.org/\">\n      <producto>\n        <a:Descripcion>Licuadora modificada desde Postman</a:Descripcion>\n        <a:Estado>true</a:Estado>\n        <a:IdCategoria>1</a:IdCategoria>\n        <a:IdProducto>1</a:IdProducto>\n        <a:Nombre>Licuadora Actualizada</a:Nombre>\n        <a:Precio>99.99</a:Precio>\n        <a:Stock>20</a:Stock>\n      </producto>\n    </ActualizarProducto>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ProductoService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ProductoService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Producto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/IProductoService/EliminarProducto\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <s:Body>\n    <EliminarProducto xmlns=\"http://tempuri.org/\">\n      <id>5</id>\n    </EliminarProducto>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ProductoService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ProductoService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Categorias",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/ICategoriaService/ObtenerCategorias\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <s:Body>\n    <ObtenerCategorias xmlns=\"http://tempuri.org/\" />\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/CategoriaService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "CategoriaService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Categoria por ID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/ICategoriaService/ObtenerCategoria\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <s:Body>\n    <ObtenerCategoria xmlns=\"http://tempuri.org/\">\n      <id>1</id>\n    </ObtenerCategoria>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/CategoriaService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "CategoriaService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar Categoria",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/ICategoriaService/AgregarCategoria\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"\n            xmlns:a=\"http://schemas.datacontract.org/2004/07/TiendaAdonis.Models\">\n  <s:Body>\n    <AgregarCategoria xmlns=\"http://tempuri.org/\">\n      <categoria>\n        <a:Descripcion>Accesorios y artículos de cocina</a:Descripcion>\n        <a:Estado>true</a:Estado>\n        <a:IdCategoria>0</a:IdCategoria>\n        <a:Nombre>Accesorios</a:Nombre>\n      </categoria>\n    </AgregarCategoria>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/CategoriaService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "CategoriaService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Categoria",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/ICategoriaService/ActualizarCategoria\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"\n            xmlns:a=\"http://schemas.datacontract.org/2004/07/TiendaAdonis.Models\">\n  <s:Body>\n    <ActualizarCategoria xmlns=\"http://tempuri.org/\">\n      <categoria>\n        <a:Descripcion>Categoria actualizada desde Postman</a:Descripcion>\n        <a:Estado>true</a:Estado>\n        <a:IdCategoria>1</a:IdCategoria>\n        <a:Nombre>Electrodomésticos Actualizados</a:Nombre>\n      </categoria>\n    </ActualizarCategoria>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/CategoriaService.svc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "CategoriaService.svc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Categoria",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
+          },
+          {
+            "key": "SOAPAction",
+            "value": "\"http://tempuri.org/ICategoriaService/EliminarCategoria\"",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <s:Body>\n    <EliminarCategoria xmlns=\"http://tempuri.org/\">\n      <id>4</id>\n    </EliminarCategoria>\n  </s:Body>\n</s:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:46036/CategoriaService.svc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "46036",
+          "path": [
+            "CategoriaService.svc"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:46036",
+      "type": "string"
+    }
+  ]
+}
