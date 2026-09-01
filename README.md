@@ -43,7 +43,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto localmente:
 
 ### 3. Compilación y Ejecución
 **Con Visual Studio:**
-1. Abre el archivo `TiendaAdonis.sln` con Visual Studio.
+1. Abre el archivo `TiendaAdonis.sln` o usa el archivo `TiendaAdonis.csproj` con Visual Studio.
 2. Compila la solución (`Ctrl + Shift + B`).
 3. Ejecuta el proyecto presionando `F5` (con depuración) o `Ctrl + F5` (sin depuración).
 
